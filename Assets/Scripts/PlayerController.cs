@@ -15,12 +15,6 @@ public class PlayerController : MonoBehaviour
 
     public void Movement(InputAction.CallbackContext context)
     {
-        if (moveInput == null)
-        {
-            Debug.LogError("MoveInput is missing in the PlayerController script");
-            return;
-        }
-
         moveInput = context.ReadValue<Vector2>();
         Debug.Log($"The key you pressed is: {moveInput}");
     }
