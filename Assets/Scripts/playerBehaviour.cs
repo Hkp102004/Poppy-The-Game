@@ -44,7 +44,6 @@ public class playerBehaviour : MonoBehaviour
         {
             transform.Translate(Vector3.up * height * Time.deltaTime);
             count++;
-            Debug.Log(count);
             StartCoroutine(JumpCooldown()); //cooldown for jump
         }
     }
@@ -52,7 +51,6 @@ public class playerBehaviour : MonoBehaviour
     IEnumerator JumpCooldown() //cooldown for jump to wait 2 seconds
     {
         yield return new WaitForSeconds(2f);
-        Debug.Log("Couroutine ended");
         count = 0;
     }
 }
