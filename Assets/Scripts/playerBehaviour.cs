@@ -8,7 +8,6 @@ public class playerBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private float speed = 10f;
     [SerializeField] private float height = 300f;
-    [SerializeField] private bool jump = true;
     private int count = 0;
     void Start()
     {

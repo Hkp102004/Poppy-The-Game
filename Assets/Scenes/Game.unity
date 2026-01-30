@@ -2795,7 +2795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5968972224230269848, guid: 323fb96a9fc107d4a88804f20051a3e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5968972224230269848, guid: 323fb96a9fc107d4a88804f20051a3e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2888,7 +2888,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::playerBehaviour
   speed: 10
   height: 400
-  jump: 1
 --- !u!50 &1795047592
 Rigidbody2D:
   serializedVersion: 5
@@ -3039,7 +3038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5968972224230269848, guid: 323fb96a9fc107d4a88804f20051a3e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5968972224230269848, guid: 323fb96a9fc107d4a88804f20051a3e1, type: 3}
       propertyPath: m_LocalRotation.w
