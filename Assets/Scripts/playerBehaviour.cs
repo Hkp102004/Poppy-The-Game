@@ -27,9 +27,9 @@ public class playerBehaviour : MonoBehaviour
         Vector3 direction = new Vector3(horiInput,0,0);
         transform.Translate(direction * speed * Time.deltaTime);
 
-        if(transform.position.x <= -9.3f)
+        if(transform.position.x <= -3.5f)
         {
-            transform.position = new Vector3(-9.3f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-3.5f, transform.position.y, transform.position.z);
         }
 
         if(Input.GetKeyDown(KeyCode.Space)) //jumpting 
