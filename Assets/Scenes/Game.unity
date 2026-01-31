@@ -2886,9 +2886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacc944e279b8ae48a42e7e8d1af6434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerBehaviour
+  body: {fileID: 1795047592}
   speed: 10
   height: 400
-  Jumpie: 1
 --- !u!50 &1795047592
 Rigidbody2D:
   serializedVersion: 5
