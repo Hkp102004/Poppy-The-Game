@@ -11,12 +11,22 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private float speed = 10f;
     [SerializeField] private float height = 400f;
+    [SerializeField] private GameObject bulletPrefab;
     //[SerializeField] private bool Jumpie = true;
     private int jumpcount = 0;
     private int maxjump = 2;
     void Start()
     {
-        
+       if(bulletPrefab==null)
+        {
+            Debug.LogError("Bullet prefab is missing in playerBehaviour script");
+            return;
+        } 
+        if(body == null)
+        {
+            Debug.LogError("Rigidbody2D is missing in playerBehvaiour scipt");
+            return;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -50,6 +60,14 @@ public class playerBehaviour : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             jumpcount=0;
+        }
+    }
+
+    public void Shoot()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(bulletPrefab, transform.position + new Vector3(3,0,0), Quaternion.identity);     
         }
     }
 
