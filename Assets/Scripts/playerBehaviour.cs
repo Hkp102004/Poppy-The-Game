@@ -32,6 +32,7 @@ public class playerBehaviour : MonoBehaviour
     void Update()
     {
         Movement();
+        Shoot();
     }
 
     public void Movement()

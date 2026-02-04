@@ -2890,6 +2890,7 @@ MonoBehaviour:
   body: {fileID: 1795047592}
   speed: 6
   height: 300
+  bulletPrefab: {fileID: 7847067693180627911, guid: f5cc099c8a6eeaf40b7585a742fa2067, type: 3}
 --- !u!50 &1795047592
 Rigidbody2D:
   serializedVersion: 5
@@ -3054,11 +3055,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4723076872681522065, guid: f5cc099c8a6eeaf40b7585a742fa2067, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11852
+      value: 9.47
       objectReference: {fileID: 0}
     - target: {fileID: 4723076872681522065, guid: f5cc099c8a6eeaf40b7585a742fa2067, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.60987
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 4723076872681522065, guid: f5cc099c8a6eeaf40b7585a742fa2067, type: 3}
       propertyPath: m_LocalPosition.z

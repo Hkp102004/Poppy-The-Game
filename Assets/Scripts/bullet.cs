@@ -21,7 +21,7 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime); //movement of bullet
+        transform.Translate(Vector3.right * speed * Time.deltaTime); //movement of bullet
 
         if(transform.position.x > player.position.x + deathzone) //to destroy the game object
         {
