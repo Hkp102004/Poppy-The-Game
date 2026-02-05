@@ -15,7 +15,7 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private float firerate = 0.5f;
     private int jumpcount = 0;
     private int maxjump = 2;
-    [SerializeField]private int lives = 3;
+    [SerializeField] public int lives = 3;
     void Start()
     {
        if(bulletPrefab==null)
