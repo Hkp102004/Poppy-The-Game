@@ -12,6 +12,7 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float height = 400f;
     [SerializeField] private GameObject bulletPrefab; //prefaab of the bullet that will be instantiated
+    [SerializeField] private float firerate = 0.5f;
     private int jumpcount = 0;
     private int maxjump = 2;
     [SerializeField]private int lives = 3;
@@ -66,9 +67,14 @@ public class playerBehaviour : MonoBehaviour
 
     public void Shoot()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && firerate <= 0)
         {
             Instantiate(bulletPrefab, transform.position + new Vector3(0.9f,0,0), Quaternion.Euler(0,0,90));     
+            firerate = 0.5f;
+        }
+        else
+        {
+            firerate -= Time.deltaTime;
         }
     }
 
