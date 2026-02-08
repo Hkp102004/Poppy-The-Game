@@ -2873,6 +2873,7 @@ MonoBehaviour:
   firerate: 0.5
   lives: 3
   animator: {fileID: 0}
+  shootdelay: 0.2
 --- !u!50 &1795047592
 Rigidbody2D:
   serializedVersion: 5

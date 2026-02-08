@@ -16,7 +16,9 @@ public class playerBehaviour : MonoBehaviour
     private int jumpcount = 0;
     private int maxjump = 2;
     [SerializeField] public int lives = 3;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator animator; //this is for the animation
+    [SerializeField] private float shootdelay = 0.3f;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -60,6 +62,7 @@ public class playerBehaviour : MonoBehaviour
             body.linearVelocity = new Vector3(body.linearVelocityX,0,0);
             body.AddForce(Vector3.up * height, ForceMode2D.Impulse);
             jumpcount++;
+            animator.SetTrigger("jump"); //triggering the jumpting animation
         }
 
         if(horiInput > 0.1f) //this is the animation for movement 
@@ -95,7 +98,8 @@ public class playerBehaviour : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && firerate <= 0)
         {
-            Instantiate(bulletPrefab, transform.position + new Vector3(0.9f,0,0), Quaternion.Euler(0,0,90));     
+            animator.SetTrigger("shoot");  //triggering the shooting animation
+            StartCoroutine(ShootingDelay(shootdelay));  
             firerate = 0.5f;
         }
         else
@@ -114,6 +118,12 @@ public class playerBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ShootingDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Instantiate(bulletPrefab, transform.position + new Vector3(0.9f,0.35f,0), Quaternion.Euler(0,0,90));
     }
 
 }
