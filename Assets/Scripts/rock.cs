@@ -64,7 +64,13 @@ public class rock : MonoBehaviour
             speed = 0;
             rockCollider.enabled = false;
             explosion.SetTrigger("blast");
-            Destroy(gameObject);
+            Destroy(gameObject,1.2f);
+        }
+        if(collision.gameObject.tag == "Ground")
+        {
+            speed =0;
+            explosion.SetTrigger("blast");
+            Destroy(gameObject,1.2f);
         }
     }
 }
