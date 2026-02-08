@@ -166,7 +166,7 @@ MonoBehaviour:
   rock: {fileID: 3706794239435875043, guid: 64626297f9130524fb4bd92efc49ecea, type: 3}
   spawnRate: 2
   player_position: {fileID: 1795047589}
-  active: 1
+  active: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

@@ -61,6 +61,25 @@ public class playerBehaviour : MonoBehaviour
             body.AddForce(Vector3.up * height, ForceMode2D.Impulse);
             jumpcount++;
         }
+
+        if(horiInput > 0.1f) //this is the animation for movement 
+        {
+            animator.ResetTrigger("reset");
+            animator.ResetTrigger("left");
+            animator.SetTrigger("right");
+        }
+        else if(horiInput < -0.1f)
+        {
+            animator.ResetTrigger("reset");
+            animator.ResetTrigger("right");
+            animator.SetTrigger("left");
+        }
+        else
+        {
+            animator.ResetTrigger("right");
+            animator.ResetTrigger("left");
+            animator.SetTrigger("reset");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
