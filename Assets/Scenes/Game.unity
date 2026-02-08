@@ -2872,6 +2872,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 647102364726852362, guid: a6581d80ea0184843a1316b70b16cc22, type: 3}
   firerate: 0.5
   lives: 3
+  animator: {fileID: 0}
 --- !u!50 &1795047592
 Rigidbody2D:
   serializedVersion: 5
@@ -3033,6 +3034,6 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 367581975}
   - {fileID: 1795047589}
   - {fileID: 26971890}
+  - {fileID: 367581975}
