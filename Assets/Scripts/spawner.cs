@@ -37,7 +37,7 @@ public class spawner : MonoBehaviour
 
         if(spawnRate <= 0 && active)
         {
-            Instantiate(rock, new Vector3(transform.position.x, Random.Range(-0.9f,5f), transform.position.z), Quaternion.identity);
+            Instantiate(rock, new Vector3(transform.position.x, player_position.position.y + Random.Range(-0.9f,5f), transform.position.z), Quaternion.identity);
             spawnRate =2f;
         }
         else
