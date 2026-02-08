@@ -19,6 +19,7 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
        if(bulletPrefab==null)
         {
             Debug.LogError("Bullet prefab is missing in playerBehaviour script");
@@ -27,6 +28,11 @@ public class playerBehaviour : MonoBehaviour
         if(body == null)
         {
             Debug.LogError("Rigidbody2D is missing in playerBehvaiour scipt");
+            return;
+        }
+        if(animator == null)
+        {
+            Debug.LogError("Animator is missing in playerBehaviour script");
             return;
         }
     }
