@@ -62,7 +62,6 @@ public class playerBehaviour : MonoBehaviour
             body.linearVelocity = new Vector3(body.linearVelocityX,0,0);
             body.AddForce(Vector3.up * height, ForceMode2D.Impulse);
             jumpcount++;
-            animator.SetTrigger("jump"); //triggering the jumpting animation
         }
 
         if(horiInput > 0.1f) //this is the animation for movement 

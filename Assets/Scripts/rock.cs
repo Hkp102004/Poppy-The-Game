@@ -46,6 +46,7 @@ public class rock : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Physics2D.IgnoreLayerCollision(6,7);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
