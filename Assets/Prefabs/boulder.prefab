@@ -81,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1487493873
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 92cc18003520b374ca52f3c4f21dc398, type: 3}
@@ -146,6 +146,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 15
   deathzone: 18
+  explosion: {fileID: 0}
 --- !u!50 &5598244014340369596
 Rigidbody2D:
   serializedVersion: 5
