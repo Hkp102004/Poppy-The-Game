@@ -15,13 +15,15 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private float firerate = 0.5f;
     private int jumpcount = 0;
     private int maxjump = 2;
-    [SerializeField] public int lives = 3;
+    [SerializeField] public int lives = 3; //this is for lives of player
     [SerializeField] private Animator animator; //this is for the animation
     [SerializeField] private float shootdelay = 0.3f;
+    UIManager ui;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+       animator = GetComponent<Animator>();
+       ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
        if(bulletPrefab==null)
         {
             Debug.LogError("Bullet prefab is missing in playerBehaviour script");
@@ -35,6 +37,11 @@ public class playerBehaviour : MonoBehaviour
         if(animator == null)
         {
             Debug.LogError("Animator is missing in playerBehaviour script");
+            return;
+        }
+        if(ui == null)
+        {
+            Debug.LogError("UIManager script is missing from playerBehaviour script");
             return;
         }
     }

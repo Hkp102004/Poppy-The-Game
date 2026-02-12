@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Bullet
   - Rock
+  - UI
   layers:
   - Default
   - TransparentFX
