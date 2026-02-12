@@ -119,6 +119,7 @@ public class playerBehaviour : MonoBehaviour
         if(lives>0)
         {
             lives--;
+            ui.UpdateLive(lives);
         }
         if(lives==0)
         {

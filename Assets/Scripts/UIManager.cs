@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float waitTime;
     [SerializeField] private Text score;
     [SerializeField] private Sprite[] lives_images; //array of lives display
+    [SerializeField] private Image lives_displayer;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -39,12 +40,19 @@ public class UIManager : MonoBehaviour
             Debug.LogError("playerBehaviour script is missing in uimanager script");
             return;
         }
+        if(lives_displayer==null)
+        {
+            Debug.LogError("Lives displayer is missing in uimanager");
+            return;
+        }
+        lives_displayer.sprite = lives_images[3];
     }
 
     // Update is called once per frame
     void Update()
     {
         score.text = scorevar.ToString();
+
     }
 
     public void ShowMessage(string msg)
@@ -61,5 +69,10 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         messageText.gameObject.SetActive(false);
         spawn.active= true;
+    }
+
+    public void UpdateLive(int lives)
+    {
+        lives_displayer.sprite = lives_images[lives];
     }
 }
