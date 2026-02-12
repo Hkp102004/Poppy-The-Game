@@ -543,7 +543,7 @@ MonoBehaviour:
   rock: {fileID: 3706794239435875043, guid: 64626297f9130524fb4bd92efc49ecea, type: 3}
   spawnRate: 2
   player_position: {fileID: 1795047589}
-  active: 0
+  active: 1
 --- !u!1 &50319419
 GameObject:
   m_ObjectHideFlags: 0
@@ -23898,7 +23898,7 @@ MonoBehaviour:
   speed: 6
   height: 400
   bulletPrefab: {fileID: 647102364726852362, guid: a6581d80ea0184843a1316b70b16cc22, type: 3}
-  firerate: 0.5
+  firerate: 0.4
   lives: 3
   animator: {fileID: 0}
   shootdelay: 0.2
