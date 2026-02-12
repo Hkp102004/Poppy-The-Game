@@ -696,6 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   player: {fileID: 1795047589}
   offset: {x: 0, y: 1, z: -9.2}
+  smoothSpeed: 4
 --- !u!1 &367581973
 GameObject:
   m_ObjectHideFlags: 0
