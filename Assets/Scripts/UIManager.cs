@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text score;
     [SerializeField] private Sprite[] lives_images; //array of lives display
     [SerializeField] private Image lives_displayer;
+    [SerializeField] private GameObject gameover_Screen;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -20,6 +21,7 @@ public class UIManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>();
 
         messageText.gameObject.SetActive(false);
+        gameover_Screen.gameObject.SetActive(false);
         if(messageText==null)
         {
             Debug.LogError("message text is missing from uimanager script");
@@ -74,5 +76,10 @@ public class UIManager : MonoBehaviour
     public void UpdateLive(int lives)
     {
         lives_displayer.sprite = lives_images[lives];
+    }
+
+    public void DeadScreen()
+    {
+        gameover_Screen.gameObject.SetActive(true);
     }
 }

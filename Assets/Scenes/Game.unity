@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 509607701}
   - component: {fileID: 509607700}
   m_Layer: 5
-  m_Name: game ovr teext
+  m_Name: game ovr text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24186,6 +24186,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 364d632e7086cfd45adda85e53630772, type: 3}
   - {fileID: 21300000, guid: 86eccc238b12e524ea03421b33a538cc, type: 3}
   lives_displayer: {fileID: 210795942}
+  gameover_Screen: {fileID: 1088424150}
 --- !u!1 &1973711388
 GameObject:
   m_ObjectHideFlags: 0
