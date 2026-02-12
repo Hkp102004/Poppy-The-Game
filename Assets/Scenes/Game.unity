@@ -1673,7 +1673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a260b5d90e44e44bc10df7d9c9bf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  message: 
+  message: Hello, how are you?
+  uIManager: {fileID: 1968462693}
 --- !u!1 &656602080
 GameObject:
   m_ObjectHideFlags: 0
@@ -22512,7 +22513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1664719389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22901,6 +22902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998d4f146d8613a4788f487f89b93477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  messageText: {fileID: 1664719390}
+  waitTime: 5
 --- !u!1 &1973711388
 GameObject:
   m_ObjectHideFlags: 0
