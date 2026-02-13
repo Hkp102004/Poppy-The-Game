@@ -15,15 +15,17 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private float firerate = 0.5f;
     private int jumpcount = 0;
     private int maxjump = 2;
-    [SerializeField] public int lives = 3; //this is for lives of player
+    [SerializeField] private int lives = 3; //this is for lives of player
     [SerializeField] private Animator animator; //this is for the animation
     [SerializeField] private float shootdelay = 0.3f;
     UIManager ui;
+    spawner spawnerScript;
 
     void Start()
     {
        animator = GetComponent<Animator>();
        ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
+       spawnerScript = GameObject.FindGameObjectWithTag("Spawner").GetComponent<spawner>();
        if(bulletPrefab==null)
         {
             Debug.LogError("Bullet prefab is missing in playerBehaviour script");
@@ -42,6 +44,11 @@ public class playerBehaviour : MonoBehaviour
         if(ui == null)
         {
             Debug.LogError("UIManager script is missing from playerBehaviour script");
+            return;
+        }
+        if(spawnerScript == null)
+        {
+            Debug.LogError("Spawner script is missing in player script");
             return;
         }
     }
@@ -125,6 +132,7 @@ public class playerBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
             ui.DeadScreen();
+            spawnerScript.StopSpawning();
         }
     }
 

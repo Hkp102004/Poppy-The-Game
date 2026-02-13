@@ -6,7 +6,7 @@ public class spawner : MonoBehaviour
     [SerializeField] private GameObject rock; //the rock prefab that should be sopwaned again and again
     [SerializeField] private float spawnRate = 2f; //the rate at which the bopulders should be spawned
     [SerializeField] private Transform player_position;
-    public bool active = true;
+    [SerializeField] private bool active = true;
     playerBehaviour playerScript;
 
 
@@ -45,14 +45,15 @@ public class spawner : MonoBehaviour
             spawnRate -= Time.deltaTime;
         }
 
-        if(playerScript.lives <= 0)
-        {
-            active = false;
-        }
-
         if(player_position == null)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            return;
         }
+    }
+
+    public void StopSpawning()
+    {
+        active = false;
     }
 }
