@@ -1199,6 +1199,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4703419934170855877, guid: be95971fba02e174d92d802b011f3d19, type: 3}
+      propertyPath: message
+      value: Hey Cutie, welcome to your very personal game , Hope you like it ;)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703419934170855877, guid: be95971fba02e174d92d802b011f3d19, type: 3}
       propertyPath: uIManager
       value: 
       objectReference: {fileID: 1968462693}

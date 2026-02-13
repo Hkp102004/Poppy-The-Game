@@ -9,12 +9,14 @@ public class rock : MonoBehaviour
     playerBehaviour playerScript;
     CircleCollider2D rockCollider;
     [SerializeField] private Animator explosion;
+    [SerializeField] private AudioSource blastsound;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>();
         rockCollider = GetComponent<CircleCollider2D>();
         explosion = GetComponent<Animator>();
+        blastsound = GetComponent<AudioSource>();
         if(player == null)
         {
             Debug.LogError("Tranform of player is missing in rock script");
@@ -33,6 +35,11 @@ public class rock : MonoBehaviour
         if(explosion == null)
         {
             Debug.LogError("rock explosion animtion is missinf in rock script");
+            return;
+        }
+        if(blastsound == null)
+        {
+            Debug.LogError("Blast sound is missing in rock script");
             return;
         }
     }
@@ -54,6 +61,7 @@ public class rock : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             playerScript.Damage();
+            blastsound.Play();
             speed = 0;
             rockCollider.enabled = false; //this will turn off the collision 
             explosion.SetTrigger("blast");
@@ -62,6 +70,7 @@ public class rock : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
+            blastsound.Play();
             speed = 0;
             rockCollider.enabled = false;
             explosion.SetTrigger("blast");
