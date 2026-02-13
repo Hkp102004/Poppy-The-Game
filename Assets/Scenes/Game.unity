@@ -786,7 +786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -336, y: 198}
+  m_AnchoredPosition: {x: -327, y: 192}
   m_SizeDelta: {x: 164.8276, y: 122.7675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &235589311
@@ -823,8 +823,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 339}
-  m_SizeDelta: {x: 3832.196, y: 584.235}
+  m_AnchoredPosition: {x: 0, y: 73.296}
+  m_SizeDelta: {x: 511.1368, y: 146.5922}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235589313
 MonoBehaviour:
@@ -848,7 +848,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d2e12d2c417890240b10473a81a1213f, type: 3}
-    m_FontSize: 230
+    m_FontSize: 53
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -1803,8 +1803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.545}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 325}
-  m_SizeDelta: {x: 2856.6663, y: 458.3964}
+  m_AnchoredPosition: {x: 0, y: 65.91586}
+  m_SizeDelta: {x: 582.3188, y: 99.6198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509607700
 MonoBehaviour:
@@ -1828,7 +1828,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5653be7a6d062b941908e38fb7cf8097, type: 3}
-    m_FontSize: 300
+    m_FontSize: 72
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -22836,10 +22836,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0879dc40f92185242bb81ab0eb2a28b7, type: 3}
-    m_FontSize: 180
+    m_FontSize: 35
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 211
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -22892,8 +22892,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0024261, y: -264.2452}
-  m_SizeDelta: {x: 795.08, y: 210.4904}
+  m_AnchoredPosition: {x: 0.00040181, y: -68.01685}
+  m_SizeDelta: {x: 201.36, y: 46.2851}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877479324
 MonoBehaviour:
@@ -22980,7 +22980,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.09
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &877479326
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23187,10 +23187,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d2e12d2c417890240b10473a81a1213f, type: 3}
-    m_FontSize: 129
+    m_FontSize: 35
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 146
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -23622,10 +23622,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 281dbab15afffcb4ca0123db2b5a3f7d, type: 3}
-    m_FontSize: 159
+    m_FontSize: 35
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 173
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -23701,10 +23701,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d2e12d2c417890240b10473a81a1213f, type: 3}
-    m_FontSize: 129
+    m_FontSize: 35
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 146
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -23890,8 +23890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: -0.0000005848706}
-  m_SizeDelta: {x: 795.0703, y: 235.4739}
+  m_AnchoredPosition: {x: 0.0000038146973, y: -6.267597}
+  m_SizeDelta: {x: 201.3592, y: 44.7471}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1347478273
 MonoBehaviour:
@@ -23978,7 +23978,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.09
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1347478275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25811,8 +25811,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000047684, y: -112.48865}
-  m_SizeDelta: {x: 3867.4473, y: 1486.191}
+  m_AnchoredPosition: {x: -0.0050049, y: -35.91047}
+  m_SizeDelta: {x: 799.99, y: 378.1851}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664719390
 MonoBehaviour:
@@ -25836,7 +25836,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0879dc40f92185242bb81ab0eb2a28b7, type: 3}
-    m_FontSize: 242
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -26516,8 +26516,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -89.724}
-  m_SizeDelta: {x: 1122.8176, y: 179.4478}
+  m_AnchoredPosition: {x: 0.0000076293945, y: -37}
+  m_SizeDelta: {x: 251.3185, y: 52.9407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891161151
 MonoBehaviour:
@@ -26604,7 +26604,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.09
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1891161153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26715,8 +26715,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -317}
-  m_SizeDelta: {x: 1122.8176, y: 179.4478}
+  m_AnchoredPosition: {x: 0.00001017, y: -103.52992}
+  m_SizeDelta: {x: 251.32, y: 52.7417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1951074843
 MonoBehaviour:
@@ -26803,7 +26803,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.09
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1951074845
 CanvasRenderer:
   m_ObjectHideFlags: 0
