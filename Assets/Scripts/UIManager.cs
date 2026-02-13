@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         messageText.gameObject.SetActive(false);
-        spawn.RestartSpawn();
+        spawn.RestartSpawn(); //this will start spawning again
     }
 
     public void UpdateLive(int lives)

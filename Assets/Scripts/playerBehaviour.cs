@@ -18,6 +18,8 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private int lives = 3; //this is for lives of player
     [SerializeField] private Animator animator; //this is for the animation
     [SerializeField] private float shootdelay = 0.3f;
+    [SerializeField] private bool shieldactive = false;
+    [SerializeField] private GameObject shield;
     UIManager ui;
     spawner spawnerScript;
 
@@ -123,7 +125,7 @@ public class playerBehaviour : MonoBehaviour
 
     public void Damage()
     {
-        if(lives>0)
+        if(lives>0 && !shieldactive)
         {
             lives--;
             ui.UpdateLive(lives);
@@ -136,10 +138,25 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
+    public void Shield()  //working hereeee
+    {
+        if(Input.GetKeyDown(KeyCode.Q) && shieldactive)
+        {
+            shield.gameObject.SetActive(true);
+            StartCoroutine(ShieldOverload());
+        }
+    }
+
     IEnumerator ShootingDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         Instantiate(bulletPrefab, transform.position + new Vector3(0.9f,0.35f,0), Quaternion.Euler(0,0,90));
+    }
+
+    IEnumerator ShieldOverload()  //working here as well
+    {
+        yield return new WaitForSeconds(3f);
+        shield.gameObject.SetActive(false);
     }
 
 }
