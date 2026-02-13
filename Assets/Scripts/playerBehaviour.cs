@@ -87,6 +87,7 @@ public class playerBehaviour : MonoBehaviour
         Movement();
         Shoot();
         Shield();
+        WinCheck();
     }
 
     public void Movement()
@@ -175,6 +176,14 @@ public class playerBehaviour : MonoBehaviour
             shieldSound.Play();
             StartCoroutine(ShieldOverload());
             StartCoroutine(ShieldCooldown());
+        }
+    }
+
+    public void WinCheck()
+    {
+       if(transform.position.x >= 258.3f)
+        {
+            ui.WinScreen();
         }
     }
 

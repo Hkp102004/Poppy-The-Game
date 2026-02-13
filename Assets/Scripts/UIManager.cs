@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioSource CollectionSound;
     [SerializeField] private AudioSource GameOverSound;
     [SerializeField] private AudioSource DamageSound;
+    [SerializeField] private GameObject gamewinScreen;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -65,6 +66,12 @@ public class UIManager : MonoBehaviour
             Debug.LogError("The damage sound is missing in UIManager script");
             return;
         }
+        if(gamewinScreen == null)
+        {
+            Debug.LogError("Game win screen is missing in UIManager script");
+            return;
+        }
+        gamewinScreen.gameObject.SetActive(false);
         lives_displayer.sprite = lives_images[3];
     }
 
@@ -102,5 +109,10 @@ public class UIManager : MonoBehaviour
     {
         gameover_Screen.gameObject.SetActive(true);
         GameOverSound.Play();
+    }
+
+    public void WinScreen()
+    {
+        gamewinScreen.gameObject.SetActive(true);
     }
 }
