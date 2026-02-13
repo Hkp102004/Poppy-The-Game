@@ -20,6 +20,7 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private float shootdelay = 0.3f;
     [SerializeField] private bool shieldactive = false;
     [SerializeField] private GameObject shield;
+    [SerializeField] private AudioSource jumpSound;
     UIManager ui;
     spawner spawnerScript;
 
@@ -30,6 +31,7 @@ public class playerBehaviour : MonoBehaviour
        spawnerScript = GameObject.FindGameObjectWithTag("Spawner").GetComponent<spawner>();
        shield.gameObject.SetActive(false);
        shieldactive = true;
+       jumpSound = GetComponent<AudioSource>(); //this will get the audio source
        if(bulletPrefab==null)
         {
             Debug.LogError("Bullet prefab is missing in playerBehaviour script");
@@ -84,6 +86,7 @@ public class playerBehaviour : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && jumpcount<maxjump)
         {
             body.linearVelocity = new Vector3(body.linearVelocityX,0,0);
+            jumpSound.Play();
             body.AddForce(Vector3.up * height, ForceMode2D.Impulse);
             jumpcount++;
         }
@@ -146,7 +149,7 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
-    public void Shield()  //working hereeee
+    public void Shield()  
     {
         if(Input.GetKeyDown(KeyCode.Q) && shieldactive)
         {
@@ -162,7 +165,7 @@ public class playerBehaviour : MonoBehaviour
         Instantiate(bulletPrefab, transform.position + new Vector3(0.9f,0.35f,0), Quaternion.Euler(0,0,90));
     }
 
-    IEnumerator ShieldOverload()  //working here as well
+    IEnumerator ShieldOverload()  
     {
         yield return new WaitForSeconds(3f);
         shield.gameObject.SetActive(false);
