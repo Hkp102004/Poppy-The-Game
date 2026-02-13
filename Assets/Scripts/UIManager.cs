@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite[] lives_images; //array of lives display
     [SerializeField] private Image lives_displayer;
     [SerializeField] private GameObject gameover_Screen;
+    [SerializeField] private AudioSource CollectionSound;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -47,6 +48,11 @@ public class UIManager : MonoBehaviour
             Debug.LogError("Lives displayer is missing in uimanager");
             return;
         }
+        if(CollectionSound == null)
+        {
+            Debug.LogError("Collection sound is missing from UIManager script");
+            return;
+        }
         lives_displayer.sprite = lives_images[3];
     }
 
@@ -60,6 +66,7 @@ public class UIManager : MonoBehaviour
     public void ShowMessage(string msg)
     {
         messageText.text = msg;
+        CollectionSound.Play();
         messageText.gameObject.SetActive(true);
         scorevar+=1;
         spawn.StopSpawning();
