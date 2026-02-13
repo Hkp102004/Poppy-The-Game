@@ -62,7 +62,7 @@ public class UIManager : MonoBehaviour
         messageText.text = msg;
         messageText.gameObject.SetActive(true);
         scorevar+=1;
-        spawn.active = false;
+        spawn.StopSpawning();
         StartCoroutine(MessageCooldown());
     }
 
@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         messageText.gameObject.SetActive(false);
-        spawn.active= true;
+        spawn.RestartSpawn();
     }
 
     public void UpdateLive(int lives)

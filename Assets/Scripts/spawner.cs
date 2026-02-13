@@ -56,4 +56,9 @@ public class spawner : MonoBehaviour
     {
         active = false;
     }
+    public void RestartSpawn()
+    {
+        active = true;
+    }
 }
+
