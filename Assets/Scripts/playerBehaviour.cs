@@ -154,7 +154,7 @@ public class playerBehaviour : MonoBehaviour
 
     public void Damage()
     {
-        if(lives>0 && !shieldactive)
+        if(lives>0 && !shieldactive) //nug should be fixed here
         {
             lives--;
             ui.UpdateLive(lives);
