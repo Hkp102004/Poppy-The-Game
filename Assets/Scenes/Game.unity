@@ -509,7 +509,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e0d8feed118314a45b6b89ba8c42e5c6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1197,10 +1197,6 @@ PrefabInstance:
     - target: {fileID: 2218547927634307510, guid: be95971fba02e174d92d802b011f3d19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703419934170855877, guid: be95971fba02e174d92d802b011f3d19, type: 3}
-      propertyPath: message
-      value: Hey Cutie, welcome to your very personal game. I Love you ;)
       objectReference: {fileID: 0}
     - target: {fileID: 4703419934170855877, guid: be95971fba02e174d92d802b011f3d19, type: 3}
       propertyPath: uIManager
@@ -22434,7 +22430,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 6de35313f2ffa1b4eb0d8b8138e1b1ad, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -24759,11 +24755,6 @@ PrefabInstance:
     - target: {fileID: 2218547927634307510, guid: be95971fba02e174d92d802b011f3d19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703419934170855877, guid: be95971fba02e174d92d802b011f3d19, type: 3}
-      propertyPath: message
-      value: With you every single day feels like a blessing, From the part of waking
-        you up to putting you to sleep, I love every single second of it.
       objectReference: {fileID: 0}
     - target: {fileID: 4703419934170855877, guid: be95971fba02e174d92d802b011f3d19, type: 3}
       propertyPath: uIManager

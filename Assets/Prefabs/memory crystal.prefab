@@ -106,7 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a260b5d90e44e44bc10df7d9c9bf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  message: Hello, how are you?
+  message: With you every single day feels like a blessing, From the part of waking
+    you up to putting you to sleep, I love every single second of it.
   uIManager: {fileID: 0}
 --- !u!58 &2768475152502297207
 CircleCollider2D:

@@ -6,7 +6,7 @@ public class crystalScript : MonoBehaviour
 {
     [TextArea]
     public String message;
-    public UIManager uIManager;
+    [SerializeField] private UIManager uIManager;
     void Start()
     {
         if(uIManager==null)
