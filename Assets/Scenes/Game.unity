@@ -641,7 +641,7 @@ MonoBehaviour:
   rock: {fileID: 3706794239435875043, guid: 64626297f9130524fb4bd92efc49ecea, type: 3}
   spawnRate: 2
   player_position: {fileID: 1795047589}
-  active: 1
+  active: 0
 --- !u!1 &50319419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1021,15 @@ MonoBehaviour:
   player: {fileID: 1795047589}
   offset: {x: 0, y: 1, z: -9.2}
   smoothSpeed: 3
+  yDeadZone: 1.5
+  lookAheadDistance: 3
+  lookAheadSpeed: 5
+  shakeDuration: 0.2
+  shakeMagnitude: 0.3
+  minX: -5
+  maxX: 360
+  minY: -2
+  maxY: 15
 --- !u!1 &350277528
 GameObject:
   m_ObjectHideFlags: 0
