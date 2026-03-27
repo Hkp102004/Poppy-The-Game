@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class playerBehaviour : MonoBehaviour
 {
@@ -177,7 +178,7 @@ public class playerBehaviour : MonoBehaviour
 
     public void Shield()  
     {
-        if(Input.GetKeyDown(KeyCode.Q) && shieldactive)
+        if(Input.GetKeyDown(KeyCode.Q) && shieldactive && alive)
         {
             shield.gameObject.SetActive(true);
             shieldSound.Play();
@@ -187,7 +188,7 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
-    public void WinCheck()
+    public void WinCheck() //checks if player won the game  
     {
        if(transform.position.x >= 258.3f)
         {
@@ -215,6 +216,19 @@ public class playerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(10f);
         shieldactive = true;
         shieldRecharge.Play();
+    }
+
+    public void powerup()
+    {
+        if(lives==3)
+        {
+            height += 100;
+        }
+        else
+        {
+            lives++;
+            ui.UpdateLive(lives);
+        }
     }
 
 }
