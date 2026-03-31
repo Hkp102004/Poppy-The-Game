@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioSource DamageSound;
     [SerializeField] private GameObject gamewinScreen;
     [SerializeField] private AudioSource gamewinSound;
+    [SerializeField] private GameObject pausemenu;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -77,6 +78,11 @@ public class UIManager : MonoBehaviour
             Debug.LogError("Game win sound is not in uimanager script");
             return;
         }
+        if(pausemenu == null)
+        {
+            Debug.LogError("Pause menu is missing in UIManager script");
+            return;
+        }
         gamewinScreen.gameObject.SetActive(false);
         lives_displayer.sprite = lives_images[3];
     }
@@ -121,5 +127,20 @@ public class UIManager : MonoBehaviour
     {
         gamewinSound.Play();
         gamewinScreen.gameObject.SetActive(true);
+    }
+
+    public void pause()
+    {
+        Time.timeScale = 0f;
+        pausemenu.gameObject.SetActive(true);
+        player.deactive();
+        // spawn.StopSpawning();
+    }
+    
+    public void resume()
+    {
+        Time.timeScale = 1f;
+        pausemenu.gameObject.SetActive(false);
+        player.active();
     }
 }
