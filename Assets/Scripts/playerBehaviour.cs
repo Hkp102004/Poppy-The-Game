@@ -192,6 +192,16 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
+    public void active() //to make players movement active 
+    {
+        alive = true;
+    }
+
+    public void deactive() //to make players movement deactive
+    {
+        alive = false;
+    }
+
     IEnumerator ShootingDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -226,5 +236,4 @@ public class playerBehaviour : MonoBehaviour
             ui.UpdateLive(lives);
         }
     }
-
 }
