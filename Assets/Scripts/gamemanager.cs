@@ -19,7 +19,11 @@ public class gamemanager : MonoBehaviour
 
     void Update()
     {
-        Pause();
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(paused) resume();
+            else Pause();
+        }
     }
     public void Restart()
     {
@@ -28,23 +32,15 @@ public class gamemanager : MonoBehaviour
     public void Main_menu()
     {
         SceneManager.LoadScene(0); //0 is for main menu scene
+        resume();
     }
     void Pause() //to check and pause the game
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            paused = true;
-            ui.pause();
-
-            if(paused)
-            {
-                paused = false;
-                ui.resume();
-            }
-        }
+        paused = true;
+        ui.pause();
     }
 
-    void resume()
+    public void resume()
     {
         paused = false;
         ui.resume();

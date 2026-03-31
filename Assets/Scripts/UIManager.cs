@@ -85,6 +85,7 @@ public class UIManager : MonoBehaviour
         }
         gamewinScreen.gameObject.SetActive(false);
         lives_displayer.sprite = lives_images[3];
+        pausemenu.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
