@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class playerBehaviour : MonoBehaviour
 {
@@ -24,6 +21,7 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField] private AudioSource shieldRecharge;
     [SerializeField] private AudioSource ShootingSound;
     [SerializeField] private AudioSource shieldSound;
+    private bool alive;
     private bool invincible;
     UIManager ui;
     spawner spawnerScript;
@@ -81,6 +79,7 @@ public class playerBehaviour : MonoBehaviour
             Debug.LogError("Shield sound is missing in playerNehaviour script");
             return;
         }
+        alive = true;
     }
     // Update is called once per frame
     void Update()
@@ -96,14 +95,17 @@ public class playerBehaviour : MonoBehaviour
         float horiInput = Input.GetAxis("Horizontal"); //key maps for fonrizontal inputs
 
         Vector3 direction = new Vector3(horiInput,0,0);
-        transform.Translate(direction * speed * Time.deltaTime);
+        if(alive)
+        {
+            transform.Translate(direction * speed * Time.deltaTime); //the movement  
+        }
 
         if(transform.position.x <= -3.5f)
         {
             transform.position = new Vector3(-3.5f, transform.position.y, transform.position.z);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && jumpcount<maxjump)
+        if(Input.GetKeyDown(KeyCode.Space) && jumpcount<maxjump && alive)
         {
             body.linearVelocity = new Vector3(body.linearVelocityX,0,0);
             jumpSound.Play();
@@ -111,13 +113,13 @@ public class playerBehaviour : MonoBehaviour
             jumpcount++;
         }
 
-        if(horiInput > 0.1f) //this is the animation for movement 
+        if(horiInput > 0.1f && alive) //this is the animation for movement 
         {
             animator.ResetTrigger("reset");
             animator.ResetTrigger("left");
             animator.SetTrigger("right");
         }
-        else if(horiInput < -0.1f)
+        else if(horiInput < -0.1f  && alive)
         {
             animator.ResetTrigger("reset");
             animator.ResetTrigger("right");
@@ -142,7 +144,7 @@ public class playerBehaviour : MonoBehaviour
 
     public void Shoot()
     {
-        if(Input.GetKeyDown(KeyCode.E) && firerate <= 0)
+        if(Input.GetKeyDown(KeyCode.E) && firerate <= 0 &&alive)
         {
             animator.SetTrigger("shoot");  //triggering the shooting animation
             StartCoroutine(ShootingDelay(shootdelay));  
@@ -156,14 +158,15 @@ public class playerBehaviour : MonoBehaviour
 
     public void Damage()
     {
-        if(lives>0 && !invincible) //bug should be fixed here
+        if(lives>0 && !invincible && alive) //bug should be fixed here
         {
             lives--;
             ui.UpdateLive(lives);
         }
         if(lives==0)
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            alive = false;
             ui.DeadScreen();
             spawnerScript.StopSpawning();
         }
@@ -171,7 +174,7 @@ public class playerBehaviour : MonoBehaviour
 
     public void Shield()  
     {
-        if(Input.GetKeyDown(KeyCode.Q) && shieldactive)
+        if(Input.GetKeyDown(KeyCode.Q) && shieldactive && alive)
         {
             shield.gameObject.SetActive(true);
             shieldSound.Play();
@@ -181,12 +184,22 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
-    public void WinCheck()
+    public void WinCheck() //checks if player won the game  
     {
        if(transform.position.x >= 258.3f)
         {
             ui.WinScreen();
         }
+    }
+
+    public void active() //to make players movement active 
+    {
+        alive = true;
+    }
+
+    public void deactive() //to make players movement deactive
+    {
+        alive = false;
     }
 
     IEnumerator ShootingDelay(float delay)
@@ -211,4 +224,16 @@ public class playerBehaviour : MonoBehaviour
         shieldRecharge.Play();
     }
 
+    public void powerup()
+    {
+        if(lives==3)
+        {
+            height += 100;
+        }
+        else
+        {
+            lives++;
+            ui.UpdateLive(lives);
+        }
+    }
 }
