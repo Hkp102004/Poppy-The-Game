@@ -219,7 +219,7 @@ public class playerBehaviour : MonoBehaviour
     
     IEnumerator ShieldCooldown()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         shieldactive = true;
         shieldRecharge.Play();
     }

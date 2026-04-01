@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   player: {fileID: 0}
-  speed: 7
+  speed: 5.68
   deathzone: 18
   explosion: {fileID: 0}
   blastsound: {fileID: 0}
