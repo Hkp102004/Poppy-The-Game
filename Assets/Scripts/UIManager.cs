@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gamewinScreen;
     [SerializeField] private AudioSource gamewinSound;
     [SerializeField] private GameObject pausemenu;
+    [SerializeField] private GameObject shieldIcon;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -125,5 +126,10 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         pausemenu.gameObject.SetActive(false);
         player.active();
+    }
+
+    public void showShieldIcon() //function to make the shield icon visible
+    {
+        shieldIcon.gameObject.SetActive(true);
     }
 }

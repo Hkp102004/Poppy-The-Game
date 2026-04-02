@@ -4,8 +4,6 @@ using UnityEngine.UIElements;
 
 public class crystalScript : MonoBehaviour
 {
-    [TextArea]
-    public String message;
     [SerializeField] private UIManager uIManager;
     void Start()
     {
