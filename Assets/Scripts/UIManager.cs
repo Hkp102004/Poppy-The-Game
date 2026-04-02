@@ -132,4 +132,9 @@ public class UIManager : MonoBehaviour
     {
         shieldIcon.gameObject.SetActive(true);
     }
+
+    public void hideShieldIcon() //function to make the shield icon invisible
+    {
+        shieldIcon.gameObject.SetActive(false);
+    }
 }

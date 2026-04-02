@@ -212,6 +212,7 @@ public class playerBehaviour : MonoBehaviour
     IEnumerator ShieldOverload()  
     {
         yield return new WaitForSeconds(4f);
+        ui.hideShieldIcon();
         shield.gameObject.SetActive(false);
         shieldactive = false;
         invincible = false;
@@ -221,6 +222,7 @@ public class playerBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         shieldactive = true;
+        ui.showShieldIcon();
         shieldRecharge.Play();
     }
 
