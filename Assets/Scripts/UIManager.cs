@@ -137,4 +137,26 @@ public class UIManager : MonoBehaviour
     {
         shieldIcon.gameObject.SetActive(false);
     }
+
+    public void BlinkShield()
+    {
+        StartCoroutine(BlinkShieldIcon());
+    }
+
+    public void StopBlinkingShield()
+    {
+        StopCoroutine(BlinkShieldIcon());
+        shieldIcon.gameObject.SetActive(true);
+    }
+
+    IEnumerator BlinkShieldIcon()
+    {
+        while(true)
+        {
+            shieldIcon.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+            shieldIcon.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
 }
