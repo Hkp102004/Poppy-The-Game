@@ -179,6 +179,7 @@ public class playerBehaviour : MonoBehaviour
             shield.gameObject.SetActive(true);
             shieldSound.Play();
             invincible = true;
+            ui.BlinkShield();
             StartCoroutine(ShieldOverload());
             StartCoroutine(ShieldCooldown());
         }
@@ -214,6 +215,7 @@ public class playerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(4f);
         ui.hideShieldIcon();
         shield.gameObject.SetActive(false);
+        ui.StopBlinkingShield();
         shieldactive = false;
         invincible = false;
     }
