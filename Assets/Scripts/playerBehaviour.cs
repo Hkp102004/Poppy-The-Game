@@ -213,9 +213,9 @@ public class playerBehaviour : MonoBehaviour
     IEnumerator ShieldOverload()  
     {
         yield return new WaitForSeconds(4f);
-        ui.hideShieldIcon();
         shield.gameObject.SetActive(false);
         ui.StopBlinkingShield();
+        ui.hideShieldIcon();
         shieldactive = false;
         invincible = false;
     }

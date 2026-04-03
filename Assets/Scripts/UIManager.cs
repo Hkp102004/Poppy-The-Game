@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
+    private Coroutine blinkCoroutine;
     void Start()
     {
         spawn = GameObject.FindGameObjectWithTag("Spawner").GetComponent<spawner>();
@@ -77,6 +78,12 @@ public class UIManager : MonoBehaviour
             Debug.LogError("Pause menu is missing in UIManager script");
             return;
         }
+        if(shieldIcon == null)
+        {
+            Debug.LogError("Shield icon is missing in UIManager script");
+            return;
+        }
+        shieldIcon.gameObject.SetActive(true);
         gamewinScreen.gameObject.SetActive(false);
         lives_displayer.sprite = lives_images[3];
         pausemenu.gameObject.SetActive(false);
@@ -140,12 +147,16 @@ public class UIManager : MonoBehaviour
 
     public void BlinkShield()
     {
-        StartCoroutine(BlinkShieldIcon());
+        blinkCoroutine = StartCoroutine(BlinkShieldIcon());
     }
 
     public void StopBlinkingShield()
     {
-        StopCoroutine(BlinkShieldIcon());
+        if (blinkCoroutine != null)
+        {
+            StopCoroutine(blinkCoroutine);
+            blinkCoroutine = null;
+        }
         shieldIcon.gameObject.SetActive(true);
     }
 
