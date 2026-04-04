@@ -189,6 +189,7 @@ public class playerBehaviour : MonoBehaviour
     {
        if(transform.position.x >= 258.3f)
         {
+            alive = false;
             ui.WinScreen();
         }
     }

@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioSource gamewinSound;
     [SerializeField] private GameObject pausemenu;
     [SerializeField] private GameObject shieldIcon;
+    [SerializeField] private AudioSource bgmusic;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -83,6 +84,11 @@ public class UIManager : MonoBehaviour
             Debug.LogError("Shield icon is missing in UIManager script");
             return;
         }
+        if(bgmusic == null)
+        {
+            Debug.LogError("Background music is missing in UIManager script");
+            return;
+        }
         shieldIcon.gameObject.SetActive(true);
         gamewinScreen.gameObject.SetActive(false);
         lives_displayer.sprite = lives_images[3];
@@ -116,6 +122,7 @@ public class UIManager : MonoBehaviour
 
     public void WinScreen()
     {
+        bgmusic.Stop(); //this will stop the background music when game ends
         gamewinSound.Play();
         gamewinScreen.gameObject.SetActive(true);
     }
