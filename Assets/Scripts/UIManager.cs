@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pausemenu;
     [SerializeField] private GameObject shieldIcon;
     [SerializeField] private AudioSource bgmusic;
+    [SerializeField] private GameObject winloseScreen;
     spawner spawn;
     playerBehaviour player;
     private int scorevar=0;
@@ -89,10 +90,16 @@ public class UIManager : MonoBehaviour
             Debug.LogError("Background music is missing in UIManager script");
             return;
         }
+        if(winloseScreen == null)
+        {
+            Debug.LogError("Win lose screen is missing in UIManager script");
+            return;
+        }
         shieldIcon.gameObject.SetActive(true);
         gamewinScreen.gameObject.SetActive(false);
         lives_displayer.sprite = lives_images[3];
         pausemenu.gameObject.SetActive(false);
+        winloseScreen.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -124,7 +131,14 @@ public class UIManager : MonoBehaviour
     {
         bgmusic.Stop(); //this will stop the background music when game ends
         gamewinSound.Play();
-        gamewinScreen.gameObject.SetActive(true);
+        if(scorevar == 8)
+        {
+            gamewinScreen.gameObject.SetActive(true); //when player actually wins the game
+        }
+        else
+        {
+            winloseScreen.gameObject.SetActive(true); //when player rushes to the end
+        }
     }
 
     public void pause()
